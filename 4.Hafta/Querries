@@ -16,3 +16,10 @@ Select e.FIRST_NAME, e.LAST_NAME, e.SALARY
 from employees e
 where e.DEPARTMENT_ID=50 and TO_CHAR(CURRENT_DATE, 'YYYY') - TO_CHAR(HIRE_DATE, 'YYYY') > 3
 
+Select l.city
+from LOCATIONS l
+where l.country_ıd='US'
+
+Select (e.FIRST_NAME||' '||e.Last_NAME) as isim, d.department_name
+from employees e, departments d
+where e.department_ıd=d.department_ıd

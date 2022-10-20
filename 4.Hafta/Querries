@@ -1,0 +1,18 @@
+Select EMPLOYEES.FIRST_NAME, EMPLOYEES.LAST_NAME, EMPLOYEES.SALARY, DEPARTMENTS.DEPARTMENT_NAME From EMPLOYEES INNER JOIN Departments on Employees.Department_ID=Departments.Department_ID;
+
+Select d.DEPARTMENT_NAME, e.FIRST_NAME, e.LAST_NAME, e.SALARY
+from employees e, departments d
+where d.MANAGER_ID=e.manager_ID
+
+Select j.JOB_TITLE, e.FIRST_NAME, e.LAST_NAME, e.SALARY
+from employees e, jobs j
+where e.JOB_ID=j.JOB_ID
+
+Select e.FIRST_NAME, e.LAST_NAME, e.SALARY
+from employees e
+where e.DEPARTMENT_ID=80
+
+Select e.FIRST_NAME, e.LAST_NAME, e.SALARY
+from employees e
+where e.DEPARTMENT_ID=50 and TO_CHAR(CURRENT_DATE, 'YYYY') - TO_CHAR(HIRE_DATE, 'YYYY') > 3
+

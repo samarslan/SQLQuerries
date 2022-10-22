@@ -1,25 +1,47 @@
-Select EMPLOYEES.FIRST_NAME, EMPLOYEES.LAST_NAME, EMPLOYEES.SALARY, DEPARTMENTS.DEPARTMENT_NAME From EMPLOYEES INNER JOIN Departments on Employees.Department_ID=Departments.Department_ID;
+/*
+4. hafta 
+her bir işçinin adını soyadını maaşini ve çaliştiği departmanı listeleyen sql kodunu yazınız*/
 
-Select d.DEPARTMENT_NAME, e.FIRST_NAME, e.LAST_NAME, e.SALARY
-from employees e, departments d
-where d.MANAGER_ID=e.manager_ID
+/*
+select a.fırst_name,a.last_name,a.salary,d.department_name
+from employees a, departments d
+where a.department_ıd= d.department_ıd*/
 
-Select j.JOB_TITLE, e.FIRST_NAME, e.LAST_NAME, e.SALARY
+/*her depatmanın adını ve departmanın müdürünün adını ve maaşını listeleyen sqol kodunu yazınız*/
+/*
+Select e.fırst_name,e.last_name,e.salary,e.manager_ıd, d.manager_ıd, d.department_name
+from employees e , departments d
+where e.manager_ıd=d.manager_ıd
+*/
+/*
+tüm çalışanların adını soyadını maaşını ve görevini listeleyen sql kodunu yazınız*/
+/*
+select e.fırst_name,e.last_name,e.salary, j.job_tıtle
 from employees e, jobs j
-where e.JOB_ID=j.JOB_ID
+where e.job_ıd=j.job_ıd
+*/
+/*
+sales departmanında çalışan işçileriin adının soyadının maaşını listeleyen sql kodunu yazınız*/
+/*
+select a.fırst_name,a.last_name,a.salary
+from employees a, departments d
+where a.department_ıd=d.department_ıd and d.department_name = 'Sales' 
+*/
+/*
+shipping departmanın da en az 3 yil çalısanlarını adını soyaduını maaşını yazdıran sql kodunu yazınız*/
+/*
+select e.fırst_name,e.last_name,e.salary,d.department_name
+from employees e, departments d
+where d.department_name='Shipping' and to_char(e.hıre_date,'yyyy') >3 and e.department_ıd=d.department_ıd
+*//*
+ülke adı 'United States of America' olan şehirlerin hangisi olduğu listeleyen sql kodunu yazınız*/
+/*
+select l.cıty,l.state_provınce,c.country_name
+from locatıons l,countrıes c
+where c.country_name ='United States of America'  and c.country_ıd=l.country_ıd*/
+/*
+ad ve soyadıuının 'İSİM' başlıklı tek bir sütünda ve tüm çalişanların hangi departmanda olduğunu listeleyen sql kodunu yazınız.*/
 
-Select e.FIRST_NAME, e.LAST_NAME, e.SALARY
-from employees e
-where e.DEPARTMENT_ID=80
-
-Select e.FIRST_NAME, e.LAST_NAME, e.SALARY
-from employees e
-where e.DEPARTMENT_ID=50 and TO_CHAR(CURRENT_DATE, 'YYYY') - TO_CHAR(HIRE_DATE, 'YYYY') > 3
-
-Select l.city
-from LOCATIONS l
-where l.country_ıd='US'
-
-Select (e.FIRST_NAME||' '||e.Last_NAME) as isim, d.department_name
+select (e.fırst_name||' '||e.last_name) as İSİM ,d.department_name
 from employees e, departments d
 where e.department_ıd=d.department_ıd

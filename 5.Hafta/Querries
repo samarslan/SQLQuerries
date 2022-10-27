@@ -1,4 +1,4 @@
-Soru 1: Programmer olarak çalışan personelin adını, soyadını, maaşını ve departmanın adını yazdır.
+Soru 1: Programmer olarak çalışan personelin adını, soyadını, maaşını yazdır.
 
 select a.fırst_name,a.last_name,a.salary,j.job_title
 from employees a JOIN jobs j
@@ -17,7 +17,7 @@ select e.fırst_name,e.last_name, a.first_name,a.last_name
 from employees e JOIN employees a
 ON e.manager_ıd=a.employee_ıd
 
-Soru 3: Marketing departmamında 6 yıldan fazla çalışanların adını ve soy adını listeleyin.
+Soru 3: Marketing departmamında 6 yıldan fazla çalışanların adını ve soyadını listeleyin.
 
 Select e.first_name, e.last_name
 from departments d, employees e
@@ -28,3 +28,6 @@ Select e.first_name, e.last_name
 from departments d join employees e
 on d.department_id=e.department_id and
 d.department_name='Marketing' and TRUNC(SYSDATE, 'YEAR') - TRUNC(e.hire_date, 'YEAR')>6
+
+Soru 4: Soru 1: Programmer olarak çalışan personelin adını, soyadını, maaşını ve departmanın adını yazdır.
+

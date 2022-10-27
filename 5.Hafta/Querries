@@ -4,3 +4,15 @@ select a.fırst_name,a.last_name,a.salary,j.job_title
 from employees a JOIN jobs j
 ON j.job_ıd=a.job_ıd
 and j.job_title='Programmer'
+
+Soru 2: Her çalışanın adını soyadını ve manager'ının adını ve soyadını yazdır.
+
+Where ile:
+select e.fırst_name,e.last_name, a.first_name,a.last_name
+from employees e, employees a
+Where e.manager_ıd=a.employee_ıd
+
+Join ile:
+select e.fırst_name,e.last_name, a.first_name,a.last_name
+from employees e JOIN employees a
+ON e.manager_ıd=a.employee_ıd

@@ -17,7 +17,7 @@ select e.fırst_name,e.last_name, a.first_name,a.last_name
 from employees e JOIN employees a
 ON e.manager_ıd=a.employee_ıd
 
-Soru 3: Marketin departmamında 6 yıldır çalışanların adını ve soy adını listeleyin.
+Soru 3: Marketing departmamında 6 yıldan fazla çalışanların adını ve soy adını listeleyin.
 
 Select e.first_name, e.last_name
 from departments d, employees e

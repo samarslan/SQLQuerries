@@ -1,5 +1,6 @@
 Soru 1: Programmer olarak çalışan personelin adını, soyadını, maaşını ve departmanın adını yazdır.
 
-select a.fırst_name,a.last_name,a.salary,d.department_name
-from employees a, departments d
-where a.job_ıd='IT_PROG' and a.department_ıd=d.department_ıd
+select a.fırst_name,a.last_name,a.salary,j.job_title
+from employees a JOIN jobs j
+ON j.job_ıd=a.job_ıd
+and j.job_title='Programmer'

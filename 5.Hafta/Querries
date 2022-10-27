@@ -16,3 +16,14 @@ Join ile:
 select e.fırst_name,e.last_name, a.first_name,a.last_name
 from employees e JOIN employees a
 ON e.manager_ıd=a.employee_ıd
+
+Soru 3: Marketin departmamında 6 yıldır çalışanların adını ve soy adını listeleyin.
+
+select e.first_name,e.last_name
+from employees e
+where TRUNC(SYSDATE, 'YEAR') - TRUNC(e.hire_date, 'YEAR')>6 and e.department_ıd=20
+
+Select e.first_name, e.last_name
+from departments d, employees e
+where d.department_id=e.department_id and
+d.department_name='Marketing' and TRUNC(SYSDATE, 'YEAR') - TRUNC(e.hire_date, 'YEAR')>6

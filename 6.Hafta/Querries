@@ -1,0 +1,10 @@
+Soru 1: Finance departmanında çalışan personelin adını, soyadını, maaşını ve işe giriş tarihi:
+
+Select e.first_name, e.last_name, e.salary, e.hire_date
+from employees e
+where e.department_id=100
+
+Select e.first_name, e.last_name, e.salary, e.hire_date
+from employees e Join departments d
+on e.department_id=d.department_id
+and d.department_name='Finance'

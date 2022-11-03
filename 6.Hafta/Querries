@@ -21,3 +21,21 @@ Select e.first_name, e.last_name, e.salary, j.job_title
 from employees e join jobs j
 on e.employee_id=108
 and e.job_ıd=j.job_ıd
+
+
+Soru 3: Maaşı 10000 ile 20000 arasında olan personelin adı,soyadı, ünvanı ve departmanı: 
+
+Select e.first_name, e.last_name, e.salary, j.job_title, d.department_name
+from employees e, jobs j, departments d
+where 10000<=e.salary
+and e.salary<=20000
+and e.job_id=j.job_id
+and d.department_id=e.department_id
+
+Select e.first_name, e.last_name, e.salary, j.job_title, d.department_name
+from employees e
+join jobs j on e.job_id=j.job_id
+join departments d on d.department_id=e.department_id
+where 10000<=e.salary
+and e.salary<=20000
+and d.department_id=e.department_id

@@ -39,3 +39,16 @@ join departments d on d.department_id=e.department_id
 where 10000<=e.salary
 and e.salary<=20000
 and d.department_id=e.department_id
+
+
+Soru 4: Seattle şehrinde görev yapan personelin soyadını departman adını listele:
+
+Select e.first_name, e.last_name, e.salary, d.department_name
+from employees e,departments d
+where d.location_id=1700
+and e.department_id=d.department_id
+
+Select e.first_name, e.last_name, e.salary, d.department_name
+from employees e
+join departments d on e.department_id=d.department_id
+where d.location_id=1700

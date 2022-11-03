@@ -67,3 +67,14 @@ from employees e
 join departments d on e.department_id=d.department_id
 where TRUNC(SYSDATE, 'YEAR') - TRUNC(e.hire_date, 'YEAR')>2
 and d.department_name='IT'
+
+
+Soru 6: Ek mesaisi olmayan programmer olarak çalışan personelin adı, soyadı ve çalıştığı şehir:
+
+Select e.first_name, e.last_name, l.city
+from employees e, departments d, LOCATIONS l, jobs j
+where e.commıssıon_pct is null
+and j.job_id=e.job_id
+and j.job_title='Programmer'
+and d.department_id=e.department_id
+and d.location_id=l.location_id

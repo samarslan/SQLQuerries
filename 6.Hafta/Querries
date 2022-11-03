@@ -52,3 +52,18 @@ Select e.first_name, e.last_name, e.salary, d.department_name
 from employees e
 join departments d on e.department_id=d.department_id
 where d.location_id=1700
+
+
+Soru 5: En az 2 yıldır IT departmanında çalışan personelin adı soyadı ve işe giriş tarihi:
+
+Select e.first_name, e.last_name, e.hire_date, d.department_name
+from employees e, departments d 
+where TRUNC(SYSDATE, 'YEAR') - TRUNC(e.hire_date, 'YEAR')>2
+and e.department_id=d.department_id
+and d.department_name='IT'
+
+Select e.first_name, e.last_name, e.hire_date, d.department_name
+from employees e
+join departments d on e.department_id=d.department_id
+where TRUNC(SYSDATE, 'YEAR') - TRUNC(e.hire_date, 'YEAR')>2
+and d.department_name='IT'

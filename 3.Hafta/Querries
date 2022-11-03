@@ -1,0 +1,47 @@
+/*Soru 1: deparmanid'si 80 ve 100 olan personellerin adını,soyadını,deparman idleri maaşlarını listeleyen SQL kodunu yazınız.*/
+/*
+Select a.fırst_name,a.last_name,a.department_ıd,a.salary 
+from employees a
+where a.department_ıd='80' or a.department_ıd='100'
+*/
+
+/*Soru 2: herhangi bir müdüre bağlı olmadan çalısan personelin adını soyadını maaşını manager _id sini listeleyen sql kodunu yazınız   */
+
+/*
+Select e.fırst_name,e.last_name,e.manager_ıd,e.salary  
+from employees e 
+where e.manager_ıd is null*/
+/*soru4: adının ikinci harfi d olan ve adı 4 karakterli personelin adını soy adını maaşını email adresini listeleyen SQL kodunu yazınız.*/
+/*
+Select e.fırst_name,e.last_name,e.emaıl,e.salary from
+employees e
+where e.fırst_name LIKE '_d__%'*/
+/*
+Soru4:Deparman IDleri 15ten büyük olan Persnelin Soyadını ve adını bir sütunda birleşrirerek deparman_id ad saoyad maaşını listeleyen sql kodunu yazınız*/
+/*
+Select  e.fırst_name || ' ' || e.last_name  As "NAME", e.salary,e.department_ıd from
+employees e
+where e.department_ıd >15*/
+/*
+Soru5:5yıldan fazla çalısan personelin maaşına1000dolar artiş yapan sql kodunu yazalım Personelin adını soyadını departmanıdsını ve ilk maaşını da listeleyelim*/
+/*
+select a.fırst_name,a.last_name,a.salary,a.department_ıd,hıre_date,a.salary+'1000' as new_salary 
+from employees a
+where to_char (hıre_date ,'yyyy') >5*/
+/*Soru6: personelin maaşını göre büyükten küçüğe soğru sıralama yaparak 
+Personeladı soyadı işe girişi tarihi listeleyen l,istelenen sql yazalım.*/
+
+/*
+Select e.fırst_name,e.last_name,e.salary,e.hıre_date 
+from employees e
+order by e.salary desc*/
+/*
+soru7: personelni adını soyadını departman ve maaşını kıdem süresine göre küçükden büyüğe doğru sıralayıp maaşını 700den az olanlara 100 dolar zam yapan sql kodunu yazınız.*/
+
+/*
+select e.fırst_name,e.last_name,e.department_ıd,e.salary,e.hıre_date ,e.salary+'1000' as new_sallary
+from employees e
+where e.salary<7000
+order by e.hıre_date desc*/
+/*
+soru=8 her departman adını ve o departmanın müdürünün adını listeleyşşn

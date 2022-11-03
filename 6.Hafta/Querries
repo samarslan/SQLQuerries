@@ -8,3 +8,16 @@ Select e.first_name, e.last_name, e.salary, e.hire_date
 from employees e Join departments d
 on e.department_id=d.department_id
 and d.department_name='Finance'
+
+
+Soru 2: Finance manager olan personelin adını soyadını maaşını ve hangi bölümde çalıştığını yazıdr:
+
+Select e.first_name, e.last_name, e.salary, j.job_title
+from employees e, jobs j
+where e.employee_id=108
+and e.job_ıd=j.job_ıd
+
+Select e.first_name, e.last_name, e.salary, j.job_title
+from employees e join jobs j
+on e.employee_id=108
+and e.job_ıd=j.job_ıd

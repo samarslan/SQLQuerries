@@ -24,3 +24,30 @@ Select d.department_name, Count(*)
 from departments d, employees e
 where e.department_id=d.department_id
 group by d.department_name
+
+5.Soru:
+
+Select l.city, Count(*)
+from departments d, locations l
+where l.location_id=d.location_id
+group by l.city
+
+6.Soru:
+
+Select c.country_name, Count(*)
+from countries c, locations l
+where l.country_ıd=c.country_ıd
+group by c.country_name
+
+7.Soru:
+
+Select e.first_name, e.last_name, e.salary
+from employees e
+where e.salary=(select min(e.salary) from employees e)
+
+8.Soru:
+
+Select e.first_name, e.last_name, e.salary, d.department_name
+from employees e, departments d
+where e.salary=(select min(e.salary) from employees e where e.department_id=d.department_id)
+and e.department_id=d.department_id

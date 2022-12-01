@@ -1,0 +1,5 @@
+1.Soru:
+
+Select e.job_id, Count(*)
+from employees e
+group by e.job_id

@@ -3,3 +3,24 @@
 Select e.job_id, Count(*)
 from employees e
 group by e.job_id
+
+2.Soru:
+
+Select j.job_title, Count(*)
+from jobs j, employees e
+where e.job_id=j.job_id
+group by j.job_title
+
+3.Soru:
+
+Select d.department_id, Count(*)
+from departments d, employees e
+where e.department_id=d.department_id
+group by d.department_id
+
+4.Soru:
+
+Select d.department_name, Count(*)
+from departments d, employees e
+where e.department_id=d.department_id
+group by d.department_name

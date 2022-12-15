@@ -47,3 +47,10 @@ Soru 5: En çok çalışanı olan job_title:
 
 
 
+
+
+
+Soru 6:Clerk olup en son işe giren:
+Select e.first_name, e.last_name, e.hire_date
+from employees e
+where e.hire_date=(Select max(e.hire_date) from employees e where e.job_id=any(select e.job_id from jobs j where j.job_title like '%Clerk%'))

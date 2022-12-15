@@ -6,3 +6,15 @@ where d.department_id=e.department_id
 group by e.first_name,e.last_name,d.department_name,e.salary
 having salary=(select min(salary)
                         from employees e)
+
+
+
+
+Soru 2: Maaşı ortalama maaştan yüksek olan çalışanlar:
+
+Select e.first_name, e.last_name, d.department_name,e.salary
+from departments d, employees e
+where d.department_id=e.department_id
+group by e.first_name,e.last_name,d.department_name,e.salary
+having salary>(select avg(salary)
+                        from employees e)

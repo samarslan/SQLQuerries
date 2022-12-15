@@ -18,3 +18,14 @@ where d.department_id=e.department_id
 group by e.first_name,e.last_name,d.department_name,e.salary
 having salary>(select avg(salary)
                         from employees e)
+
+
+Soru 3: En yüksek maaşı alan çalışan
+
+
+Select e.first_name, e.last_name, d.department_name,e.salary,j.job_title
+from departments d, employees e, jobs j
+where d.department_id=e.department_id and j.job_ıd=e.job_ıd
+group by e.first_name,e.last_name,d.department_name,e.salary,j.job_title
+having salary=(select max(salary)
+                        from employees e)

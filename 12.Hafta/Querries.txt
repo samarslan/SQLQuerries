@@ -1,0 +1,8 @@
+Soru 1: En düşük maaşlı çalışanın çalıştığı deparman
+
+Select e.first_name, e.last_name, d.department_name,e.salary
+from departments d, employees e
+where d.department_id=e.department_id
+group by e.first_name,e.last_name,d.department_name,e.salary
+having salary=(select min(salary)
+                        from employees e)

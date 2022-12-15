@@ -38,3 +38,12 @@ Select Count(*)
 from employees e
 where salary<(select avg(salary)
                         from employees e)
+
+
+
+
+Soru 5: En çok çalışanı olan job_title:
+
+
+
+

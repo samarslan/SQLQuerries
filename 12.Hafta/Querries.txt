@@ -29,3 +29,12 @@ where d.department_id=e.department_id and j.job_ıd=e.job_ıd
 group by e.first_name,e.last_name,d.department_name,e.salary,j.job_title
 having salary=(select max(salary)
                         from employees e)
+
+
+
+Soru 4: Maaşı ortalamadan düşük olan çalışan sayısı:
+
+Select Count(*)
+from employees e
+where salary<(select avg(salary)
+                        from employees e)

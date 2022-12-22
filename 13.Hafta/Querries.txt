@@ -1,3 +1,13 @@
 Soru 1: En yüksek ve en düşük maaşları, toplamı ve ortalaması:
 
 Select Max(salary), Min(Salary), Sum(Salary), Round(AVG(salary),0) from employees e
+
+
+
+Soru 2: Her departmanın en yüksek,düşük ve ortalama maaşı:
+
+Select d.department_name,
+Max(salary), 
+Min(salary), 
+Round(AVG(salary),0) from employees e, departments d where d.department_id=e.department_id
+group by d.department_name

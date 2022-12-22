@@ -39,3 +39,12 @@ order by AVG(salary)
 
 Soru 5: Bölüm sayısı:
 Select Count(distinct(e.department_id)) from employees e 
+
+
+
+Soru 6:En çok isim başharfi olan harf:
+
+Select substr(e.first_name,1,1) 
+from employees e
+group by substr(e.first_name,1,1)
+HAVING count(*)=(select max(count(*)) from employees e group by substr(e.first_name,1,1))

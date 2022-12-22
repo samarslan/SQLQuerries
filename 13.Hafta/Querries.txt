@@ -11,3 +11,15 @@ Max(salary),
 Min(salary), 
 Round(AVG(salary),0) from employees e, departments d where d.department_id=e.department_id
 group by d.department_name
+
+
+Soru 3: Yönetici olan departmanların maaş farkı 3000'den büyük olanlar:
+
+Select d.department_name, 
+d.manager_id,
+Min(salary)
+from employees e, departments d 
+where d.department_id=e.department_id 
+and d.manager_id is not null 
+group by d.department_name, d.manager_id having ((Max(salary)-Min(salary))>3000)
+order by Min(salary) desc

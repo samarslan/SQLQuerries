@@ -23,3 +23,15 @@ where d.department_id=e.department_id
 and d.manager_id is not null 
 group by d.department_name, d.manager_id having ((Max(salary)-Min(salary))>3000)
 order by Min(salary) desc
+
+
+Soru 4: Belli meslekler maaş hariç ortalaması 10000'den büyük olanlar:
+
+Select e.job_id, AVG(salary)
+from employees e
+where job_id != 'MK_MAN'
+and job_id != 'MK_REP'
+and job_id != 'ADD_AST'
+group by e.job_id
+having AVG(salary)>10000
+order by AVG(salary)

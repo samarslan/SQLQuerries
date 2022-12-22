@@ -35,3 +35,7 @@ and job_id != 'ADD_AST'
 group by e.job_id
 having AVG(salary)>10000
 order by AVG(salary)
+
+
+Soru 5: Bölüm sayısı:
+Select Count(distinct(e.department_id)) from employees e 
